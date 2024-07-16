@@ -297,12 +297,12 @@ class DataStore extends ServerComponent  implements IDataStore {
  * @param model 
  * @param afterNodeIds
  */
-		async updateSource(inst,source):Promise<string[]|{errors}> {
+	async updateSource(id,source):Promise<string[]|{errors}> {
     
 	
 				try {
 						await this.db.update(this.dbConfiguration.db,Instance_collection,
-							{ id: inst.id },
+							{ id: id },
 							{
 								$set: {source}
 							});
