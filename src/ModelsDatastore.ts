@@ -122,6 +122,8 @@ class ModelsDatastore extends ModelsDatastoreDB implements IModelsDatastore {
         try {
         if (model)
             return this.rebuildModel(model);
+
+        console.log('checking for modified models to rebuild...');
         let filesList = await this.getList();
         const models = new Map();
 
